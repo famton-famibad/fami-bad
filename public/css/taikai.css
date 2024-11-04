@@ -1,0 +1,66 @@
+.content-taikai-nav {
+    float: left;
+    width: 150px;
+}
+
+.content-taikai-main {
+    width: 1300px;
+}
+
+.kaisaibi_td {
+    max-width: 180px;
+}
+
+.taikai_name_td {
+    max-width: 380px;
+}
+
+.kaisai_basyo_td {
+    max-width: 180px;
+}
+
+.team_td {
+    max-width: 280px;
+}
+
+#form-label-city {
+    width: 160px;
+    margin-left: 70px;
+}
+
+#form-label-city span {
+    background-color: #166bb5;
+}
+
+
+/* タブレット対応 */
+@media screen and (max-width: 999px) {
+    #taikai_name {
+        width: 80%;
+    }
+
+    #form-label-city {
+        width: 160px;
+        margin-left: 0px;
+        padding-top: 10px;
+    }
+
+
+    .kaisaibi_td {
+        max-width: 64px;
+    }
+
+    .taikai_name_td {
+        max-width: 84px;
+    }
+
+    .kaisai_basyo_td {
+        max-width: 50px;
+    }
+
+    .team_td {
+        max-width: 70px;
+    }
+
+
+}
