@@ -7,7 +7,7 @@ use App\Http\Controllers\Tbm_teamController;
 Route::resource('team', Tbm_teamController::class);
 
 // クエリパラメータを処理するためのルートを追加
-Route::get('team/search/{prefecture}', [Tbm_teamController::class, 'search'])->name('team.search');
+Route::get('team/search-by-prefecture/{prefecture}', [Tbm_teamController::class, 'search'])->name('team.search');
 
 
 // Tbw_taikaisのルーティング設定　これで登録画面や更新画面のパスが作成される

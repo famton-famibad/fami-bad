@@ -547,7 +547,7 @@
                 link.addEventListener('click', function (event) {
                     event.preventDefault();
                     const prefecture = this.dataset.prefecture;
-                    const baseUrl = "{{ url('team/search') }}";
+                    const baseUrl = "{{ url('team/search-by-prefecture') }}";
                     window.location.href = `${baseUrl}/${encodeURIComponent(prefecture)}`;
                 });
             });
