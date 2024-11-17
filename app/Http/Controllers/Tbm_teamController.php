@@ -22,8 +22,7 @@ class Tbm_teamController extends Controller
 
         if ($prefecture) {
             // 都道府県が指定された場合
-            $teams = Tbm_team::where('prefecture', $prefecture)->get();
-            $indexFlg = false;
+            return $this->search($prefecture); // searchメソッドを呼び出す
         } else {
             // パラメータがない場合は非表示
             //$teams = Tbm_team::all();
@@ -94,7 +93,7 @@ class Tbm_teamController extends Controller
         Tbm_team::create($data);
 
         session()->flash('flash_message_create', 'チーム情報を登録しました。');
-        return redirect()->route('team.search', ['prefecture' => $data['prefecture']]); // 修正
+        return redirect()->route('team.index', ['prefecture' => $data['prefecture']]); 
     }
 
     /**
