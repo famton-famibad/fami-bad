@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('city', 20)->nullable(); // 市区町村
             $table->string('team', 30); // チーム名
             $table->date('kaisai_date'); // 開催日
-            $table->integer('tier', 2)->nullable(); // 大会のランクやティア（階層）
+            $table->integer('tier')->nullable(); // 大会のランクやティア（階層）
             $table->timestamps(); // 作成日時と更新日時
         });
     }
