@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('sns2', 30)->nullable(); // SNS2
             $table->string('sns3', 30)->nullable(); // SNS3
             $table->string('optional', 30)->nullable(); // 任意
-            $table->integer('del_flg', 11)->default(0); // 削除フラグ
+            $table->integer('del_flg')->default(0); // 削除フラグ
             $table->timestamps(); // 作成日時と更新日時
         });
     }
