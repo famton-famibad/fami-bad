@@ -29,7 +29,7 @@
 
 @section('content-main')
 <div class="content-team-main">
-    <img src="{{asset('storage/icon/チーム一覧_section-image.png')}}" class="section-image">
+    <img src="{{asset('images/icon/チーム一覧_section-image.png')}}" class="section-image">
 
     <div class="flash_message">
         @if(session('flash_message_create'))
@@ -567,7 +567,7 @@
                 <div id="main_box">
                     <div id="box1">
                         <img src="{{ asset('storage/team/' . $team_info['file_name']) }}" class="team-image"
-                            onerror="this.onerror=null; this.src='{{ asset('storage/team/noimage.png') }}';">
+                            onerror="this.onerror=null; this.src='{{ asset('images/noimage.png') }}';">
                     </div>
                     <div id="box2">
                         <h3>拠点</h3>

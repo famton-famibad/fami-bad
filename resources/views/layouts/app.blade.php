@@ -24,7 +24,7 @@
             <div class="site-header">
                 <div>
                     <logo>
-                        <img class="logo-img" src="{{asset('storage/タイトルロゴ.png')}}">
+                        <img class="logo-img" src="{{asset('images/タイトルロゴ.png')}}">
                     </logo>
                 </div>
                 <div class="center">

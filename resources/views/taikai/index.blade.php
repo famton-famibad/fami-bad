@@ -50,7 +50,7 @@ $taikai_month_kari = "00";
 @section('content-main')
 
 <div class="content-taikai-main">
-    <img src="{{asset('storage/icon/大会カレンダー_section-image.png')}}" class="section-image">
+    <img src="{{asset('images/icon/大会カレンダー_section-image.png')}}" class="section-image">
 
     <div class="flash_message">
         @if(session('flash_message_create'))
