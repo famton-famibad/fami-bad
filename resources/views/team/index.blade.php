@@ -5,7 +5,7 @@
 
 @section('topic-path')
 <ul class="clearfix" style="display: flex;">
-    <li class="home"><a href="./index.php">ホーム</a></li>
+    <li class="home"><a href="./">ホーム</a></li>
     <li>チーム一覧</li>
 </ul>
 @endsection

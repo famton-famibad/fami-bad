@@ -12,8 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tbw_taikais', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id(); // id カラム
+            $table->string('taikai_name', 60)->nullable(); // 大会名
+            $table->string('prefecture', 5); // 都道府県
+            $table->string('city', 20)->nullable(); // 市区町村
+            $table->string('team', 30); // チーム名
+            $table->date('kaisai_date'); // 開催日
+            $table->integer('tier', 2)->nullable(); // 大会のランクやティア（階層）
+            $table->timestamps(); // 作成日時と更新日時
         });
     }
 

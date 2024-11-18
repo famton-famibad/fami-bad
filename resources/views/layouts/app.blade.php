@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 
-    <title>ファミバドNews | ファミリーバドミントン情報サイト</title>
+    <title>Famton | ファミリーバドミントン情報サイト</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
             <div class="site-header">
                 <div>
                     <logo>
-                        <img class="logo-img" src="{{asset('storage/ファミバドの森.png')}}">
+                        <img class="logo-img" src="{{asset('storage/タイトルロゴ.png')}}">
                     </logo>
                 </div>
                 <div class="center">
@@ -94,7 +94,7 @@
                 <div class="inner">
                     <ul>
                         <li class=”current”>
-                            <a href="./index.php">トップ</a>
+                            <a href="./">トップ</a>
                         </li>
                         <li>
                             <a href="./rank.php">ランキング</a>
