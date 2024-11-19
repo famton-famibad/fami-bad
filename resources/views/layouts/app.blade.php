@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <link rel="icon" href="/favicon.png" type="image/png">
 
-    <title>Famton | ファミリーバドミントン情報サイト</title>
+    <title>ファミリーバドミントン情報サイト | Famton</title>
 </head>
 
 <body>
