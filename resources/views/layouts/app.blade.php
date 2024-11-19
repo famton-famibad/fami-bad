@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <link rel="icon" href="/favicon.png" type="image/png">
 
-    <title>Famton | ファミリーバドミントン情報サイト</title>
+    <title>ファミリーバドミントン情報サイト | Famton</title>
 </head>
 
 <body>
@@ -24,9 +24,11 @@
         <header id="header">
             <div class="site-header">
                 <div>
-                    <logo>
-                        <img class="logo-img" src="{{asset('images/タイトルロゴ.png')}}">
-                    </logo>
+                    <a href="{{ url('/') }}">
+                        <logo>
+                            <img class="logo-img" src="{{asset('images/タイトルロゴ.png')}}">
+                        </logo>
+                    </a>
                 </div>
                 <div class="center">
                     <button id="js-hamburger" type="button" class="hamburger" aria-controls="navigation"

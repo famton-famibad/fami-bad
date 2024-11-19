@@ -14,6 +14,7 @@ class Tbm_teamController extends Controller
     {
         // 各都道府県ごとのデータ件数を取得
         $teamsCnt = Tbm_team::select('prefecture')
+            ->where('del_flg', 0)
             ->groupBy('prefecture')
             ->selectRaw('prefecture, count(*) as count')
             ->pluck('count', 'prefecture');
@@ -186,7 +187,18 @@ class Tbm_teamController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $team = Tbm_team::find($id);
+        if ($team) {
+            try {
+                $team->update(['del_flg' => 1]); // del_flgを1に更新
+                session()->flash('flash_message_delete', 'チーム情報を削除しました。');
+            } catch (\Exception $e) {
+                session()->flash('flash_error_message_delete', 'チーム情報の削除中にエラーが発生しました: ' . $e->getMessage());
+            }
+        } else {
+            session()->flash('flash_error_message_delete', 'チーム情報が見つかりませんでした。');
+        }
+        return redirect()->route('team.index'); // 適切なリダイレクト先に変更
     }
 
     
@@ -197,6 +209,7 @@ class Tbm_teamController extends Controller
     {
         // 各都道府県ごとのデータ件数を取得
         $teamsCnt = Tbm_team::select('prefecture')
+            ->where('del_flg', 0)
             ->groupBy('prefecture')
             ->selectRaw('prefecture, count(*) as count')
             ->pluck('count', 'prefecture');

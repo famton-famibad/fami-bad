@@ -584,7 +584,7 @@
                         <form action="{{ route('team.edit', [$team_info->id])}}" method="">
                             <input type="submit" value="編集" class="edit-button">
                         </form>
-                        <form action="{{ route('team.destroy', [$team_info->id])}}" method="POST">
+                        <form action="{{ route('team.destroy', [$team_info->id])}}" method="POST" onsubmit="return confirmDelete('{{ $team_info->team_name }}');">
                             @csrf
                             @method('delete')
                             <input type="submit" value="削除" class="delete-button">

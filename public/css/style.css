@@ -57,7 +57,8 @@ ul {
 .topic-path li {
     float: left;
     padding: 0 5px 0 12px;
-    background: url(//contents.oricon.co.jp/pc/img/_parts/icon/icon-arrow-right06.png) no-repeat 0 50%;
+    background: url(//famibad.com/images//icon/右矢印.png) no-repeat 0 50%;
+    background-size: 9px;
 }
 
 .content-main-nav {
@@ -838,6 +839,10 @@ form {
         vertical-align: bottom;
     }
 
+    .flash_message {
+        font-size: 12px;
+    }
+
     .content {
         float: none;
         width: 100%;
@@ -884,9 +889,9 @@ form {
     }
 
     .btn-create {
-        padding: 2px 6px;
+        padding: 5px 10px;
         margin-left: 20px;
-        font-size: 8px;
+        margin-bottom: 20px;
     }
 
     .button-td input,

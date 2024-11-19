@@ -23,6 +23,7 @@ class Tbm_team extends Model
         'sns1',
         'sns2',
         'sns3',
-        'optional'
+        'optional',
+        'del_flg'
     ];
 }

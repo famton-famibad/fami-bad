@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('team', 30); // チーム名
             $table->date('kaisai_date'); // 開催日
             $table->integer('tier')->nullable(); // 大会のランクやティア（階層）
+            $table->integer('del_flg')->default(0); // 削除フラグ
             $table->timestamps(); // 作成日時と更新日時
         });
     }

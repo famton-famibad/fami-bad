@@ -139,9 +139,9 @@ $taikai_month_kari = "00";
                 <form action="{{ route('taikai.edit', [$taikai->id])}}" method="">
                     <input type="submit" value="編集" class="edit-button">
                 </form>
-                <form action="{{ route('taikai.destroy', [$taikai->id])}}" method="POST">
+                <form action="{{ route('taikai.destroy', [$taikai->id])}}" method="POST" onsubmit="return confirmDelete('{{ $taikai->taikai_name }}');">
                     @csrf
-                    @method('delete')
+                    @method('DELETE')
                     <input type="submit" value="削除" class="delete-button">
                 </form>
             </td>
@@ -154,5 +154,11 @@ $taikai_month_kari = "00";
     </div>
 </div>
 </div>
+
+<script>
+    function confirmDelete(eventName) {
+        return confirm('「' + eventName + '」の情報を削除してもよろしいですか？');
+    }
+</script>
 
 @endsection

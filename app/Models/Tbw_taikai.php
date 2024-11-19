@@ -16,7 +16,8 @@ class Tbw_taikai extends Model
         'prefecture',
         'city',
         'team',
-        'kaisai_date'
+        'kaisai_date',
+        'del_flg'
     ];
 
     protected $casts = [

@@ -12,7 +12,7 @@ class Tbw_taikaiController extends Controller
      */
     public function index()
     {
-        $taikais = Tbw_taikai::orderBy('kaisai_date', 'asc')->paginate(30);
+        $taikais = Tbw_taikai::where('del_flg', 0)->orderBy('kaisai_date', 'asc')->paginate(30);
         return view('taikai.index', compact('taikais'));
     }
 
@@ -110,8 +110,12 @@ class Tbw_taikaiController extends Controller
     public function destroy(string $id)
     {
         $taikai = Tbw_taikai::find($id);
-        $taikai->delete();
-        session()->flash('flash_message_delete', '大会情報を削除しました。');
+        if ($taikai) {
+            $taikai->update(['del_flg' => 1]);
+            session()->flash('flash_message_delete', '大会情報を削除しました。');
+        } else {
+            session()->flash('flash_error_message_delete', '大会情報が見つかりませんでした。');
+        }
         return redirect()->route('taikai.index');
     }
 }
