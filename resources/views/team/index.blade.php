@@ -554,6 +554,12 @@
         });
     </script>
 
+    <script>
+        function confirmDelete(eventName) {
+            return confirm('「' + eventName + '」の情報を削除してもよろしいですか？');
+        }
+    </script>
+
 
 
     @if(isset($teams) && !$teams->isEmpty())
