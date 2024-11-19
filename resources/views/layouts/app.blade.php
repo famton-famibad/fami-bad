@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="/favicon.png" type="image/png">
 
     <title>Famton | ファミリーバドミントン情報サイト</title>
 </head>
@@ -37,15 +38,20 @@
                         <nav id="js-global-navigation" class="global-navigation">
                             <ul class="global-navigation__list">
                                 <li>
-                                    <a href="./index.php" class="global-navigation__link">
+                                    <a href="{{ url('/') }}" class="global-navigation__link">
                                         トップ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('/rank') }}" class="global-navigation__link">
+                                        ランキング
                                     </a>
                                 </li>
                                 <li>
                                     <button type="button"
                                         class="global-navigation__link -accordion js-sp-accordion-trigger"
                                         aria-expanded='false' aria-controls="accordion1">
-                                        大会一覧
+                                        大会情報
                                     </button>
                                     <div id="accordion1" class="accordion js-accordion">
                                         <ul class="accordion__list">
@@ -66,7 +72,7 @@
                                     <button type="button"
                                         class="global-navigation__link -accordion js-sp-accordion-trigger"
                                         aria-expanded='false' aria-controls="accordion1">
-                                        チーム一覧
+                                        チーム情報
                                     </button>
                                     <div id="accordion1" class="accordion js-accordion">
                                         <ul class="accordion__list">
@@ -94,10 +100,10 @@
                 <div class="inner">
                     <ul>
                         <li class=”current”>
-                            <a href="./">トップ</a>
+                            <a href="{{ url('/') }}">トップ</a>
                         </li>
                         <li>
-                            <a href="./rank.php">ランキング</a>
+                            <a href="{{ url('/rank') }}">ランキング</a>
                         </li>
                         <li>
                             <a href="{{route('taikai.index')}}">大会カレンダー</a>

@@ -13,6 +13,10 @@ Route::get('team/search-by-prefecture/{prefecture}', [Tbm_teamController::class,
 // Tbw_taikaisのルーティング設定　これで登録画面や更新画面のパスが作成される
 Route::resource('taikai', 'App\Http\Controllers\Tbw_taikaiController');
 
+Route::get('/rank', function () {
+    return view('rank.index');
+});
+
 Route::get('/', function () {
     return view('fami_bad_main.index');
 });

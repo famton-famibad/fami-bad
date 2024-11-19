@@ -42,7 +42,7 @@ $taikai_month_kari = "00";
 
 @section('topic-path')
 <ul class="clearfix" style="display: flex;">
-    <li class="home"><a href="./">ホーム</a></li>
+    <li class="home"><a href="{{ url('/') }}">ホーム</a></li>
     <li>大会カレンダー</li>
 </ul>
 @endsection

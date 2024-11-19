@@ -23,7 +23,7 @@ body {
 
 .site-nav .inner ul .current {
     color: #545454;
-    background: #FF7F50!important;
+    background: #FF7F50 !important;
 }
 
 .site-nav .inner ul li a {
@@ -219,20 +219,25 @@ img {
         border: none;
         background-color: transparent;
     }
+
     .hamburger.-active .hamburger__line {
         background-color: transparent;
     }
+
     .hamburger.-active .hamburger__line::before {
         top: 0;
         transform: rotate(45deg);
     }
+
     .hamburger.-active .hamburger__line::after {
         top: 0;
         transform: rotate(-45deg);
     }
+
     .hamburger.-active .hamburger__text::before {
-      content: '閉じる';
+        content: '閉じる';
     }
+
     .hamburger__line {
         display: block;
         height: 2px;
@@ -244,6 +249,7 @@ img {
         background-color: #172e59;
         transition: 0.4s;
     }
+
     .hamburger__line:before,
     .hamburger__line:after {
         content: "";
@@ -254,12 +260,15 @@ img {
         background-color: #172e59;
         transition: inherit;
     }
+
     .hamburger__line:before {
         top: -6px;
     }
+
     .hamburger__line:after {
         top: 6px;
     }
+
     .hamburger__text {
         position: absolute;
         bottom: 10px;
@@ -268,6 +277,7 @@ img {
         width: 100%;
         text-align: center;
     }
+
     .hamburger__text::before {
         content: "MENU";
         text-align: center;
@@ -275,6 +285,7 @@ img {
         font-size: 10px;
         font-weight: 900;
     }
+
     .header__nav-area {
         position: fixed;
         top: 0;
@@ -287,25 +298,30 @@ img {
         background-color: #ffe8c6;
         transition: 0.4s;
     }
+
     .header__nav-area.-active {
         left: 0;
-      visibility: visible;
+        visibility: visible;
     }
+
     .global-navigation {
         padding-top: 40px;
         padding-right: 25px;
         padding-bottom: 120px;
         padding-left: 25px;
     }
-    .global-navigation__list > li {
+
+    .global-navigation__list>li {
         padding-bottom: 20px;
         border-bottom: 2px solid #832f30;
     }
-    .global-navigation__list > li + li {
-      margin-top: 20px;
+
+    .global-navigation__list>li+li {
+        margin-top: 20px;
     }
+
     .global-navigation__link {
-      display: flex;
+        display: flex;
         align-items: center;
         justify-content: space-between;
         color: #172e59;
@@ -313,6 +329,7 @@ img {
         transition: color 0.4s;
         font-size: 0.875rem;
     }
+
     .global-navigation__link.-accordion {
         position: relative;
         background: none;
@@ -323,6 +340,7 @@ img {
         width: 100%;
         padding: 0;
     }
+
     .global-navigation__link.-accordion::after {
         content: '';
         display: block;
@@ -335,6 +353,7 @@ img {
         transform: translateY(-50%);
         transition: transform 0.4s;
     }
+
     .global-navigation__link.-accordion::before {
         content: '';
         display: block;
@@ -345,28 +364,34 @@ img {
         width: 12px;
         background-color: #ed3242;
         transform: translateY(-50%);
-        
+
     }
+
     .global-navigation__link.-active::after {
-      transform: translateY(-50%) rotate(-90deg);
+        transform: translateY(-50%) rotate(-90deg);
     }
+
     .accordion {
         height: 0;
         overflow: hidden;
         visibility: hidden;
         transition: 0.4s;
     }
+
     .accordion.-active {
         height: auto;
         padding-top: 30px;
         visibility: visible;
     }
+
     .accordion__list li {
         font-size: 0.75rem;
     }
-    .accordion__list li + li {
-         margin-top: 21px;
+
+    .accordion__list li+li {
+        margin-top: 21px;
     }
+
     .accordion__link {
         color: #172e59;
     }
@@ -377,6 +402,7 @@ img {
 
     .section-image {
         height: 40px !important;
+        margin-left: 2%;
     }
 
 
@@ -779,7 +805,7 @@ form {
 .content {
     float: left;
     min-height: 600px;
-    margin-top: 180px;
+    margin-top: 150px;
     margin-bottom: 100px;
 }
 
@@ -788,9 +814,13 @@ form {
 }
 
 
-/* タブレット対応 */
-@media (max-width: 1020px) and (min-width: 768px) {
+.process-image {
+    height: 80%;
 }
+
+
+/* タブレット対応 */
+@media (max-width: 1020px) and (min-width: 768px) {}
 
 /* スマホ対応 */
 @media (max-width: 480px) {
@@ -804,14 +834,14 @@ form {
 
     .logo-img {
         height: auto;
-        width: 240px;
+        width: 260px;
         vertical-align: bottom;
     }
 
     .content {
         float: none;
         width: 100%;
-        margin-top: 70px;
+        margin-top: 80px;
     }
 
     .content-main {
@@ -828,6 +858,10 @@ form {
     th {
         padding: 5px 2px;
         font-size: 6px !important;
+    }
+
+    .table_cls {
+        margin-left: 2%;
     }
 
     .ttl-b,
@@ -867,92 +901,6 @@ form {
         margin-right: 10px;
     }
 
-
-    html,
-    body,
-    div,
-    span,
-    applet,
-    object,
-    iframe,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    blockquote,
-    pre,
-    a,
-    abbr,
-    acronym,
-    address,
-    big,
-    cite,
-    code,
-    del,
-    dfn,
-    em,
-    img,
-    ins,
-    kbd,
-    q,
-    s,
-    samp,
-    small,
-    strike,
-    strong,
-    sub,
-    sup,
-    tt,
-    var,
-    b,
-    u,
-    i,
-    center,
-    dl,
-    dt,
-    dd,
-    ol,
-    ul,
-    li,
-    fieldset,
-    form,
-    label,
-    legend,
-    table,
-    caption,
-    tbody,
-    tfoot,
-    thead,
-    tr,
-    th,
-    td,
-    article,
-    aside,
-    canvas,
-    details,
-    embed,
-    figure,
-    figcaption,
-    footer,
-    header,
-    hgroup,
-    menu,
-    nav,
-    output,
-    ruby,
-    section,
-    summary,
-    time,
-    mark,
-    audio,
-    video {
-        font-size: 50%;
-    }
-
-
     input,
     textarea {
         padding: 8px 8px;
@@ -966,6 +914,11 @@ form {
 
     .flash_message {
         margin-left: 20px;
+    }
+
+
+    .process-image {
+        height: 400px;
     }
 }
 
