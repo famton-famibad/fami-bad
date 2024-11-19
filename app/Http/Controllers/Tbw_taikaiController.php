@@ -13,7 +13,7 @@ class Tbw_taikaiController extends Controller
     public function index()
     {
         $taikais = Tbw_taikai::orderBy('kaisai_date', 'asc')->paginate(30);
-        return view('taikai\index', compact('taikais'));
+        return view('taikai.index', compact('taikais'));
     }
 
     /**
