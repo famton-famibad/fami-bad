@@ -214,7 +214,9 @@ class Tbm_teamController extends Controller
             ->selectRaw('prefecture, count(*) as count')
             ->pluck('count', 'prefecture');
 
-        $teams = Tbm_team::where('prefecture', $prefecture)->get();
+        $teams = Tbm_team::where('prefecture', $prefecture)
+            ->where('del_flg', 0)
+            ->get();
 
         if (request()->ajax()) {
             return response()->json([

@@ -817,8 +817,13 @@ form {
 
 .process-image {
     height: 80%;
+    margin-top: 10%;
 }
 
+.top-image {
+    width: 600px;
+    margin-top: 10%;
+}
 
 /* タブレット対応 */
 @media (max-width: 1020px) and (min-width: 768px) {}
@@ -921,9 +926,13 @@ form {
         margin-left: 20px;
     }
 
-
     .process-image {
         height: 400px;
+    }
+
+    .top-image {
+        width: 100%;
+        margin-top: 20%;
     }
 }
 
