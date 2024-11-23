@@ -216,6 +216,7 @@ class Tbm_teamController extends Controller
 
         $teams = Tbm_team::where('prefecture', $prefecture)
             ->where('del_flg', 0)
+            ->orderByRaw('file_name IS NULL, file_name')
             ->get();
 
         if (request()->ajax()) {
