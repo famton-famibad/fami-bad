@@ -2,6 +2,9 @@
 
 @extends('layouts.app')
 
+@section('title')
+<title>チーム情報一覧 | Famton</title>
+@endsection
 
 @section('topic-path')
 <ul class="clearfix" style="display: flex;">

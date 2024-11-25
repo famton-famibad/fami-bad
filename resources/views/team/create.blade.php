@@ -3,6 +3,10 @@
 
 @extends('layouts.app')
 
+@section('title')
+<title>チーム情報登録 | Famton</title>
+@endsection
+
 @section('content-main')
 
 <form method="POST" action="{{ route('team.store') }}" enctype="multipart/form-data" class="formWrapper">

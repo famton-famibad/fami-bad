@@ -32,20 +32,40 @@ class Tbw_taikaiController extends Controller
         $validated = $request->validate([
             'taikai_name' => 'required',
             'prefecture' => 'required',
-            'team' => 'required',
-            'kaisai_date' => 'required|date'
-
+            'city' => 'nullable|string',
+            'gym' => 'nullable|string',
+            'team' => 'nullable|string',
+            'contact' => 'nullable|string',
+            'kaisai_date' => 'required|date',
+            'fileid' => 'nullable|file',
+            'status' => 'nullable|string',
+            'others' => 'nullable|string'
         ]);
 
-        $result = Tbw_taikai::create([
-            'taikai_name' => $request->taikai_name,
-            'prefecture' => $request->prefecture,
-            'city' => $request->city,
-            'team' => $request->team,
-            'kaisai_date' => $request->kaisai_date
+        $data = $request->only([
+            'taikai_name',
+            'prefecture',
+            'city',
+            'gym',
+            'team',
+            'contact',
+            'kaisai_date',
+            'status',
+            'others',
         ]);
+        
+        if ($request->hasFile('fileid')) {
+            $extension = $request->file('fileid')->getClientOriginalExtension(); // 拡張子を取得
+            $uniqueId = time(); // 現在のタイムスタンプを取得
+            $fileName = $data['taikai_name'] . '_' . $uniqueId . '.' . $extension; // 新しいファイル名を作成
+            $data['file_name'] = $fileName;
+            $data['file_extension'] = $extension; // 拡張子を保存
+            $request->file('fileid')->storeAs('taikai', $fileName, 'public');
+        }
 
-        if (!empty($result)) {
+        Tbw_taikai::create($data);
+
+        if (!empty($data)) {
             session()->flash('flash_message_create', '大会情報を登録しました。');
         } else {
             session()->flash('flash_error_message_create', '大会情報を登録できませんでした。');
@@ -59,7 +79,11 @@ class Tbw_taikaiController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $taikai = Tbw_taikai::find($id);
+        if (!$taikai) {
+            return redirect()->route('taikai.index')->with('flash_error_message', '大会情報が見つかりませんでした。');
+        }
+        return view('taikai.show', compact('taikai'));
     }
 
     /**
@@ -79,19 +103,44 @@ class Tbw_taikaiController extends Controller
         $validated = $request->validate([
             'taikai_name' => 'required',
             'prefecture' => 'required',
-            'team' => 'required',
-            'kaisai_date' => 'required|date'
+            'city' => 'nullable|string',
+            'gym' => 'nullable|string',
+            'team' => 'nullable|string',
+            'contact' => 'nullable|string',
+            'kaisai_date' => 'required|date',
+            'fileid' => 'nullable|file',
+            'status' => 'nullable|string',
+            'others' => 'nullable|string'
         ]);
 
         try {
             $taikai = Tbw_taikai::find($id);
             if ($taikai) {
+                
+                // ファイルの更新処理
+                if ($request->hasFile('fileid')) {
+                    // 古いファイルを削除する場合はここで処理
+                    if ($taikai->file_name) {
+                        \Storage::disk('public')->delete('team/' . $taikai->file_name);
+                    }
+
+                    $extension = $request->file('fileid')->getClientOriginalExtension(); // 拡張子を取得
+                    $uniqueId = time(); // 現在のタイムスタンプを取得
+                    $fileName = $taikai->taikai_name . '_' . $uniqueId . '.' . $extension; // 新しいファイル名を作成
+                    $request->file('fileid')->storeAs('taikai', $fileName, 'public'); // ファイルを保存
+                    $taikai->file_name = $fileName; // 新しいファイル名を保存
+                }
+
                 $taikai->update([
                     'taikai_name' => $request->taikai_name,
                     'prefecture' => $request->prefecture,
                     'city' => $request->city,
+                    'gym' => $request->gym,
                     'team' => $request->team,
-                    'kaisai_date' => $request->kaisai_date
+                    'contact' => $request->contact,
+                    'kaisai_date' => $request->kaisai_date,
+                    'status' => $request->status,
+                    'others' => $request->others
                 ]);
                 session()->flash('flash_message_update', '大会情報を更新しました。');
             } else {

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('taikai_name', 60)->nullable(); // 大会名
             $table->string('prefecture', 5); // 都道府県
             $table->string('city', 20)->nullable(); // 市区町村
-            $table->string('team', 30); // チーム名
+            $table->string('team', 30); // 主催団体・チーム
             $table->date('kaisai_date'); // 開催日
             $table->integer('tier')->nullable(); // 大会のランクやティア（階層）
             $table->integer('del_flg')->default(0); // 削除フラグ

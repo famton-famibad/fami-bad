@@ -3,6 +3,10 @@
 
 @extends('layouts.app')
 
+@section('title')
+<title>大会情報登録 | Famton</title>
+@endsection
+
 @section('topic-path')
 <ul class="clearfix" style="display: flex;">
     <li class="home"><a href="./index.php">ホーム</a></li>
@@ -14,7 +18,7 @@
 
 @section('content-main')
 
-<form method="POST" action="{{ route('taikai.store') }}" class="formWrapper">
+<form method="POST" action="{{ route('taikai.store') }}" class="formWrapper" enctype="multipart/form-data">
     <h2>大会情報登録</h2>
     <hr>
     </hr>
@@ -113,6 +117,17 @@
     </div>
     <div class="form-row">
         <div class="form-label">
+            <label for="gym">会場：</label>
+            <span class="optional">任意</span>
+        </div>
+        <input type="text" id="gym" name="gym" placeholder="例) ○○体育館" value="{{ old('gym') }}"
+            class="{{ $errors->has('gym') ? 'error-input' : '' }}">
+        @if($errors->has('gym'))
+            <span class="error">{{$errors->first('gym')}}</span>
+        @endif
+    </div>
+    <div class="form-row">
+        <div class="form-label">
             <label for="team">開催団体・チーム：</label>
             <span class="required">必須</span>
         </div>
@@ -124,9 +139,42 @@
     </div>
     <div class="form-row">
         <div class="form-label">
-            <label for="comment">コメント:</label>
+            <label for="contact">問い合わせ先：</label>
+            <span class="optional">任意</span>
         </div>
-        <textarea name="comment" class="commentTextArea">{{ old('comment') }}</textarea>
+        <input type="text" id="contact" name="contact" placeholder="例) xxx@gmail.com" value="{{ old('contact') }}"
+            class="{{ $errors->has('contact') ? 'error-input' : '' }}">
+        @if($errors->has('contact'))
+            <span class="error">{{$errors->first('contact')}}</span>
+        @endif
+    </div>
+    <div class="form-row">
+        <div class="form-label">
+            <label for="fileid">要項等：</label>
+            <span class="optional">任意</span>
+        </div>
+        <input type="file" id="fileid" name="fileid" class="{{ $errors->has('fileid') ? 'error-input' : '' }}">
+        @if($errors->has('fileid'))
+            <span class="error">{{$errors->first('fileid')}}</span>
+        @endif
+    </div>
+    <div class="form-row">
+        <div class="form-label">
+            <label for="status">受付状況：</label>
+            <span class="optional">任意</span>
+        </div>
+        <input type="text" id="status" name="status" placeholder="例) ○○/○○ 受付開始, 締切済み等" value="{{ old('status') }}"
+            class="{{ $errors->has('status') ? 'error-input' : '' }}">
+        @if($errors->has('status'))
+            <span class="error">{{$errors->first('status')}}</span>
+        @endif
+    </div>
+    <div class="form-row">
+        <div class="form-label">
+            <label for="others">その他:</label>
+            <span class="optional">任意</span>
+        </div>
+        <textarea name="others" class="commentTextArea">{{ old('others') }}</textarea>
     </div>
     <div class="form-btn">
         <input type="submit" value="登録" name="submitButton" class="button">

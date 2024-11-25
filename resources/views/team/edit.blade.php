@@ -4,6 +4,10 @@
 
 @extends('layouts.app')
 
+@section('title')
+<title>チーム情報更新 | Famton</title>
+@endsection
+
 @section('content-main')
 
 <form method="POST" action="{{ route('team.update', $team->id) }}" enctype="multipart/form-data" class="formWrapper">

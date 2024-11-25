@@ -1,0 +1,66 @@
+#top #concept {
+    padding: 100px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+#top #concept .inner {
+    width: 76%;
+    max-width: 912px;
+    position: relative;
+}
+
+#top #concept .inner .desc {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.8;
+    position: relative;
+    z-index: 15;
+}
+
+#top #concept .inner h2 {
+    font-weight: bold;
+    font-size: 26px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.category-top {
+    font-size: x-large;
+    font-weight: bold;
+    background-color: #8d5524;
+    width: fit-content;
+    color: #fcdaaa;
+}
+
+
+/* タブレット対応 */
+@media screen and (max-width: 999px) {
+
+    #top #concept {
+        padding: 50px 0;
+    }
+
+    #top #concept .inner {
+        width: 80%;
+    }
+
+    #top #concept .inner .desc {
+        font-size: 14px;
+    }
+
+    #top #concept .inner h2 {
+        font-size: 20px;
+        color:#c68642;
+    }
+
+    .conteiner-category {
+        width: 60%;
+    }
+
+    .category-image {
+        width: 100%;
+    }
+
+}

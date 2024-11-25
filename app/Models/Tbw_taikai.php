@@ -15,8 +15,14 @@ class Tbw_taikai extends Model
         'taikai_name',
         'prefecture',
         'city',
+        'gym',
         'team',
+        'contact',
         'kaisai_date',
+        'file_name',
+        'file_extension',
+        'status',
+        'others',
         'del_flg'
     ];
 

@@ -1,0 +1,75 @@
+.content-show {
+    background-color: #eeeeeea8;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    border: 2px solid #832f30;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.content-show h2 {
+    font-size: 24px;
+    color: #832f30;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content-show h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #832f30;
+    border-left: 6px solid #832f30bf;
+    padding: 0.3em 0 0.3em 1em;
+    position: relative;
+}
+
+.content-show h3::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: #9f5e5c29;
+}
+
+.content-show p {
+    margin-bottom: 24px;
+    color: #555;
+    margin-left: 20px;
+}
+
+.detail-item {
+    min-height: 90px;
+}
+
+.button-group .edit-button {
+    margin-right: 0px;
+}
+
+.file-link {
+    color: blue; /* リンクの色 */
+    text-decoration: underline; /* 下線を引く */
+    cursor: pointer; /* カーソルをポインタに */
+}
+
+/* タブレット対応 */
+@media screen and (max-width: 999px) {
+
+    .content-show {
+        width: 90%;
+    }
+
+    .content-show h2 {
+        font-size: 22px;
+    }
+
+    .content-show h3 {
+        font-size: 16px;
+    }
+
+}

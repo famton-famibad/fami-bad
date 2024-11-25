@@ -21,6 +21,10 @@ $taikai_month_kari = "00";
 
 @extends('layouts.app')
 
+@section('title')
+<title>大会情報一覧 | Famton</title>
+@endsection
+
 @section('content-nav')
 <h2 class="title">カレンダー</h2>
 <ul class="list-nest">
@@ -43,7 +47,7 @@ $taikai_month_kari = "00";
 @section('topic-path')
 <ul class="clearfix" style="display: flex;">
     <li class="home"><a href="{{ url('/') }}">ホーム</a></li>
-    <li>大会カレンダー</li>
+    <li>大会情報</li>
 </ul>
 @endsection
 
@@ -112,7 +116,7 @@ $taikai_month_kari = "00";
             <th scope="col">開催日</th>
             <th scope="col">大会名</th>
             <th scope="col">開催場所</th>
-            <th scope="col">主催チーム・団体</th>
+            <th scope="col">受付状況</th>
             <th scope="col"></th>
         </tr>
         <?php    } ?>
@@ -131,18 +135,11 @@ $taikai_month_kari = "00";
                 <?php    echo $taikai_month; ?>月<?php    echo $taikai_day; ?>日（<?php    echo $week[date("w", strtotime($taikai["kaisai_date"]))] . ')' ?>
             </td>
             <td class="taikai_name_td"><?php    echo $taikai["taikai_name"]; ?></td>
-            <td class="kaisai_basyo_td"><?php    echo $taikai["prefecture"]; ?>
-                <?php    echo $taikai["city"]; ?>
-            </td>
-            <td class="team_td"><?php    echo $taikai["team"]; ?></td>
+            <td class="kaisai_basyo_td"><?php    echo $taikai["prefecture"]; ?></td>
+            <td class="status_td"><?php    echo $taikai["status"]; ?></td>
             <td class="button-td">
-                <form action="{{ route('taikai.edit', [$taikai->id])}}" method="">
-                    <input type="submit" value="編集" class="edit-button">
-                </form>
-                <form action="{{ route('taikai.destroy', [$taikai->id])}}" method="POST" onsubmit="return confirmDelete('{{ $taikai->taikai_name }}');">
-                    @csrf
-                    @method('DELETE')
-                    <input type="submit" value="削除" class="delete-button">
+                <form action="{{ route('taikai.show', [$taikai->id])}}" method="GET">
+                    <input type="submit" value="詳細" class="detail-button">
                 </form>
             </td>
 
@@ -155,10 +152,5 @@ $taikai_month_kari = "00";
 </div>
 </div>
 
-<script>
-    function confirmDelete(eventName) {
-        return confirm('「' + eventName + '」の情報を削除してもよろしいですか？');
-    }
-</script>
 
 @endsection

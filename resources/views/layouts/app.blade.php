@@ -13,9 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="icon" href="/favicon.ico" type="image/ico">
 
-    <title>ファミリーバドミントン情報サイト | Famton</title>
+    @yield('title')
 </head>
 
 <body>
@@ -108,10 +108,10 @@
                             <a href="{{ url('/rank') }}">ランキング</a>
                         </li>
                         <li>
-                            <a href="{{route('taikai.index')}}">大会カレンダー</a>
+                            <a href="{{route('taikai.index')}}">大会情報</a>
                         </li>
                         <li>
-                            <a href="{{route(name: 'team.index')}}">チーム一覧</a>
+                            <a href="{{route(name: 'team.index')}}">チーム情報</a>
                         </li>
                     </ul>
                 </div>
