@@ -133,7 +133,8 @@
                     </div>
                 </a>
                 <a href="#" class="prefecture-link" data-prefecture="福島県">
-                    <div id="fukushima" style="background-color: {{ isset($teamsCnt['福島県']) ? '#7478c2' : '#d3d3d3' }};">
+                    <div id="fukushima"
+                        style="background-color: {{ isset($teamsCnt['福島県']) ? '#7478c2' : '#d3d3d3' }};">
                         <p>福島</br>
                             @if(isset($teamsCnt["福島県"]))
                                 {{ '(' . $teamsCnt["福島県"] . ')' }}
@@ -157,7 +158,7 @@
                     </div>
                 </a>
                 <a href="#" class="prefecture-link" data-prefecture="栃木県">
-                <div id="tochigi" style="background-color: {{ isset($teamsCnt['栃木県']) ? '#31beca' : '#d3d3d3' }};">
+                    <div id="tochigi" style="background-color: {{ isset($teamsCnt['栃木県']) ? '#31beca' : '#d3d3d3' }};">
                         <p>栃木</br>
                             @if(isset($teamsCnt["栃木県"]))
                                 {{ '(' . $teamsCnt["栃木県"] . ')' }}
@@ -202,7 +203,8 @@
                     </div>
                 </a>
                 <a href="#" class="prefecture-link" data-prefecture="神奈川県">
-                    <div id="kanagawa" style="background-color: {{ isset($teamsCnt['神奈川県']) ? '#31beca' : '#d3d3d3' }};">
+                    <div id="kanagawa"
+                        style="background-color: {{ isset($teamsCnt['神奈川県']) ? '#31beca' : '#d3d3d3' }};">
                         <p>神奈川</br>
                             @if(isset($teamsCnt["神奈川県"]))
                                 {{ '(' . $teamsCnt["神奈川県"] . ')' }}
@@ -271,7 +273,8 @@
                     </div>
                 </a>
                 <a href="#" class="prefecture-link" data-prefecture="山梨県">
-                    <div id="yamanashi" style="background-color: {{ isset($teamsCnt['山梨県']) ? '#4ab969' : '#d3d3d3' }};">
+                    <div id="yamanashi"
+                        style="background-color: {{ isset($teamsCnt['山梨県']) ? '#4ab969' : '#d3d3d3' }};">
                         <p>山梨</br>
                             @if(isset($teamsCnt["山梨県"]))
                                 {{ '(' . $teamsCnt["山梨県"] . ')' }}
@@ -349,7 +352,8 @@
                     </div>
                 </a>
                 <a href="#" class="prefecture-link" data-prefecture="和歌山県">
-                    <div id="wakayama" style="background-color: {{ isset($teamsCnt['和歌山県']) ? '#b0b72f' : '#d3d3d3' }};">
+                    <div id="wakayama"
+                        style="background-color: {{ isset($teamsCnt['和歌山県']) ? '#b0b72f' : '#d3d3d3' }};">
                         <p>和歌山</br>
                             @if(isset($teamsCnt["和歌山県"]))
                                 {{ '(' . $teamsCnt["和歌山県"] . ')' }}
@@ -400,7 +404,8 @@
                     </div>
                 </a>
                 <a href="#" class="prefecture-link" data-prefecture="広島県">
-                    <div id="hiroshima" style="background-color: {{ isset($teamsCnt['広島県']) ? '#ef9f27' : '#d3d3d3' }};">
+                    <div id="hiroshima"
+                        style="background-color: {{ isset($teamsCnt['広島県']) ? '#ef9f27' : '#d3d3d3' }};">
                         <p>広島</br>
                             @if(isset($teamsCnt["広島県"]))
                                 {{ '(' . $teamsCnt["広島県"] . ')' }}
@@ -409,7 +414,8 @@
                     </div>
                 </a>
                 <a href="#" class="prefecture-link" data-prefecture="山口県">
-                    <div id="yamaguchi" style="background-color: {{ isset($teamsCnt['山口県']) ? '#ef9f27' : '#d3d3d3' }};">
+                    <div id="yamaguchi"
+                        style="background-color: {{ isset($teamsCnt['山口県']) ? '#ef9f27' : '#d3d3d3' }};">
                         <p>山口</br>
                             @if(isset($teamsCnt["山口県"]))
                                 {{ '(' . $teamsCnt["山口県"] . ')' }}
@@ -442,7 +448,8 @@
                     </div>
                 </a>
                 <a href="#" class="prefecture-link" data-prefecture="徳島県">
-                    <div id="tokushima" style="background-color: {{ isset($teamsCnt['徳島県']) ? '#d08f68' : '#d3d3d3' }};">
+                    <div id="tokushima"
+                        style="background-color: {{ isset($teamsCnt['徳島県']) ? '#d08f68' : '#d3d3d3' }};">
                         <p>徳島</br>
                             @if(isset($teamsCnt["徳島県"]))
                                 {{ '(' . $teamsCnt["徳島県"] . ')' }}
@@ -520,7 +527,8 @@
                     </div>
                 </a>
                 <a href="#" class="prefecture-link" data-prefecture="鹿児島県">
-                    <div id="kagoshima" style="background-color: {{ isset($teamsCnt['鹿児島県']) ? '#ff7575' : '#d3d3d3' }};">
+                    <div id="kagoshima"
+                        style="background-color: {{ isset($teamsCnt['鹿児島県']) ? '#ff7575' : '#d3d3d3' }};">
                         <p>鹿児島</br>
                             @if(isset($teamsCnt["鹿児島県"]))
                                 {{ '(' . $teamsCnt["鹿児島県"] . ')' }}
@@ -585,21 +593,12 @@
                         <h3>練習・活動情報</h3>
                         <p>{!! nl2br(e($team_info["practice_info"])) !!}</p>
                     </div>
-                    <div id="box3">
-                        <h3>大会成績</h3>
-                        <p>※後日実装予定※</p>
-                    </div>
-                    <div class="button-normal">
-                        <form action="{{ route('team.edit', [$team_info->id])}}" method="">
-                            <input type="submit" value="編集" class="edit-button">
-                        </form>
-                        <form action="{{ route('team.destroy', [$team_info->id])}}" method="POST" onsubmit="return confirmDelete('{{ $team_info->team_name }}');">
-                            @csrf
-                            @method('delete')
-                            <input type="submit" value="削除" class="delete-button">
-                        </form>
-                    </div>
                 </div>
+                <p class="wrap-btn">
+                    <a href="{{ route('team.show', [$team_info->id]) }}" class="team-detail-btn">
+                        詳細を見る
+                    </a>
+                </p>
             </div>
         @endforeach
     @else

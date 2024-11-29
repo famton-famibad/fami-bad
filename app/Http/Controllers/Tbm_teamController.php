@@ -102,7 +102,11 @@ class Tbm_teamController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $team = Tbm_team::find($id);
+        if (!$team) {
+            return redirect()->route('team.index')->with('flash_error_message', 'チーム情報が見つかりませんでした。');
+        }
+        return view('team.show', compact('team'));
     }
 
     /**
@@ -175,11 +179,32 @@ class Tbm_teamController extends Controller
             } else {
                 session()->flash('flash_error_message_update', 'チーム情報が見つかりませんでした。');
             }
-        } catch (\Exception $e) {
-            session()->flash('flash_error_message_update', 'チーム情報を更新できませんでした。' . $e->getMessage());
+        } catch (\Illuminate\Database\QueryException $e) {
+            // DBのバイト数以上の登録や更新時のエラーハンドリング
+            if ($e->getCode() == 22001) { // SQLSTATE[22001]: String data, right truncation
+                // エラーが発生したフィールドを特定
+                $errorField = $this->getErrorField($e);
+                session()->flash('flash_error_message_update', $errorField . 'のデータが大きすぎて保存できませんでした。');
+            } else {
+                session()->flash('flash_error_message_update', 'チーム情報を更新できませんでした。' . $e->getMessage());
+            }
         }
 
         return redirect()->route('team.search', ['prefecture' => $team['prefecture']]); // 修正
+    }
+
+    private function getErrorField($exception)
+    {
+        // エラーメッセージからフィールド名を抽出するロジックを実装
+        // エラーメッセージの形式に基づいてフィールド名を特定
+        $message = $exception->getMessage();
+        
+        // 例: "SQLSTATE[22001]: String data, right truncation: 1406 Data too long for column 'team_name' at row 1"
+        if (preg_match('/Data too long for column \'(.*?)\'/', $message, $matches)) {
+            return $matches[1]; // マッチしたフィールド名を返す
+        }
+
+        return '不明なフィールド'; // フィールド名が特定できない場合
     }
 
     /**

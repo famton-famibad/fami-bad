@@ -524,7 +524,6 @@ a:hover {
 
 #box2 {
 	width: 400px;
-	height: 300px;
 	margin-left: 75px;
 	margin-right: 25px;
 	float: right;
@@ -666,6 +665,22 @@ h1 {
 	box-sizing: border-box;
 }
 
+.wrap-btn {
+    padding: 10px 0px 30px;
+    background: #f4ece1;
+    text-align: center;
+	margin-left: 0px !important;
+}
+
+.team-detail-btn {
+    margin: 0 auto;
+    padding: 10px 100px 10px;
+    line-height: 36px;
+	background-color: #832f30bf;
+    font-size: 0.93em;
+    color: #FFF !important;
+	text-align: center;
+}
 
 
 /****************************************

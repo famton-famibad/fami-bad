@@ -1,6 +1,6 @@
 .content-show {
     background-color: #eeeeeea8;
-    width: 100%;
+    min-width: 600px;
     margin: 0 auto;
     margin-top: 50px;
     margin-bottom: 30px;
@@ -47,14 +47,31 @@
     min-height: 90px;
 }
 
+.detail-item_img {
+    text-align: center;
+}
+
+.detail-item_img .team-image {
+    width: 500px;
+    border: solid;
+    margin-bottom: 30px;
+}
+
 .button-group .edit-button {
     margin-right: 0px;
 }
 
+.button-group .delete-button {
+    margin-right: 4px;
+}
+
 .file-link {
-    color: blue; /* リンクの色 */
-    text-decoration: underline; /* 下線を引く */
-    cursor: pointer; /* カーソルをポインタに */
+    color: blue;
+    /* リンクの色 */
+    text-decoration: underline;
+    /* 下線を引く */
+    cursor: pointer;
+    /* カーソルをポインタに */
 }
 
 /* タブレット対応 */
@@ -62,6 +79,7 @@
 
     .content-show {
         width: 90%;
+        min-width: 0;
     }
 
     .content-show h2 {
@@ -70,6 +88,10 @@
 
     .content-show h3 {
         font-size: 16px;
+    }
+
+    .detail-item .team-image {
+        width: 100%;
     }
 
 }
