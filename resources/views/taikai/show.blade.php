@@ -47,6 +47,14 @@
         <div class="detail-item">
             <h3>大会名:</h3>
             <p>{{ $taikai->taikai_name }}</p>
+        </div>        
+        <div class="detail-item">
+            <h3>要項等:</h3>
+            <p>
+                <a href="{{ asset('storage/taikai/' . $taikai->file_name) }}" target="_blank" class="file-link">
+                    {{ $taikai->file_name }}
+                </a>
+            </p>
         </div>
         <div class="detail-item">
             <h3>開催日:</h3>
@@ -73,14 +81,6 @@
             <p>{{ $taikai->status }}</p>
         </div>
         <div class="detail-item">
-            <h3>要項等:</h3>
-            <p>
-                <a href="{{ asset('storage/taikai/' . $taikai->file_name) }}" target="_blank" class="file-link">
-                    {{ $taikai->file_name }}
-                </a>
-            </p>
-        </div>
-        <div class="detail-item">
             <h3>その他:</h3>
             <p>{{ $taikai->others }}</p>
         </div>
@@ -88,11 +88,13 @@
 
     <div class="button-group">
         <a href="{{ route('taikai.edit', $taikai->id) }}" class="edit-button">編集</a>
-        <form action="{{ route('taikai.destroy', $taikai->id) }}" method="POST" style="display:inline;">
+        <a href="{{ route('taikai.destroy', $taikai->id) }}" class="delete-button" 
+           onclick="event.preventDefault(); if(confirmDelete('{{ $taikai->taikai_name }}')) { document.getElementById('delete-form').submit(); }">
+            削除
+        </a>
+        <form id="delete-form" action="{{ route('taikai.destroy', $taikai->id) }}" method="POST" style="display:none;">
             @csrf
             @method('DELETE')
-            <input type="submit" value="削除" class="delete-button"
-                onclick="return confirmDelete('{{ $taikai->taikai_name }}');">
         </form>
         <a href="{{ route('taikai.index') }}" class="back-button">戻る</a>
     </div>

@@ -23,7 +23,8 @@
     font-weight: bold;
     font-size: 26px;
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
+    color:#c68642;
 }
 
 .category-top {
@@ -51,8 +52,8 @@
     }
 
     #top #concept .inner h2 {
-        font-size: 20px;
-        color:#c68642;
+        font-size: 17px;
+        margin-bottom: 20px;
     }
 
     .conteiner-category {
