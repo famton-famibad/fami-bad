@@ -8,11 +8,13 @@
 @endsection
 
 @section('topic-path')
-<ul class="clearfix" style="display: flex;">
-    <li class="home"><a href="./index.php">ホーム</a></li>
-    <li><a href="{{route('taikai.index')}}">大会カレンダー</a></li>
-    <li>登録</li>
-</ul>
+<div class="topic-path">
+    <ul class="clearfix" style="display: flex;">
+        <li class="home"><a href="./index.php">ホーム</a></li>
+        <li><a href="{{route('taikai.index')}}">大会カレンダー</a></li>
+        <li>登録</li>
+    </ul>
+</div>
 @endsection
 
 

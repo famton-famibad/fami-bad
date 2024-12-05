@@ -8,11 +8,13 @@
 @endsection
 
 @section('topic-path')
-<ul class="clearfix" style="display: flex;">
-    <li class="home"><a href="{{ route('team.index') }}">ホーム</a></li>
-    <li><a href="{{ route('team.index') }}">チーム情報一覧</a></li>
-    <li>チーム情報詳細</li>
-</ul>
+<div class="topic-path">
+    <ul class="clearfix" style="display: flex;">
+        <li class="home"><a href="{{ route('team.index') }}">ホーム</a></li>
+        <li><a href="{{ route('team.index') }}">チーム情報一覧</a></li>
+        <li>チーム情報詳細</li>
+    </ul>
+</div>
 @endsection
 
 @section('content-main')

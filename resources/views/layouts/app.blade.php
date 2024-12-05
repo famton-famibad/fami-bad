@@ -119,19 +119,11 @@
         </header>
 
         <div class="content">
-            <div class="topic-path">
-                @yield('topic-path')
-            </div>
+            @yield('topic-path')
             @if (session('message'))
                 <div class="alert alert-info">{{ session('message') }}</div>
             @endif
-            <div class="content-main-nav">
-                <nav class="main-nav">
-                    <div class="rnav">
-                        @yield('content-nav')
-                    </div>
-                </nav>
-            </div>
+            @yield('content-nav')
             <div class="content-main">
                 @yield('content-main')
             </div>

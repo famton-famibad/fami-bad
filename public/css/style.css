@@ -65,43 +65,43 @@ ul {
 -------------------------------------------------- */
 #visual-area-top {
     margin: 0 auto;
-  }
-  
-  #visual-area-top .outer-inner{
+}
+
+#visual-area-top .outer-inner {
     height: 480px;
     width: 975px;
     background: #f7f8f3;
-  }
-  
-  #visual-area-top .photo-box {
+}
+
+#visual-area-top .photo-box {
     height: 480px;
     left: 0;
     overflow: hidden;
     position: absolute;
     top: 0;
     width: 640px;
-  }
-  
-  #visual-area-top .photo-box .frame {
+}
+
+#visual-area-top .photo-box .frame {
     height: 100%;
     list-style: none;
     margin: 0;
     padding: 0;
     position: relative;
     width: 800%;
-  }
-  
-  #visual-area-top .photo-box .frame li {
+}
+
+#visual-area-top .photo-box .frame li {
     float: left;
     position: relative;
     width: 12.5%;
-  }
-  
-  #visual-area-top .photo-box .frame li img {
+}
+
+#visual-area-top .photo-box .frame li img {
     width: 100%;
-  }
-  
-  #visual-area-top .photo-box .text {
+}
+
+#visual-area-top .photo-box .text {
     background: url(/img/visual_text_area.png) no-repeat;
     bottom: 30px;
     color: #fff;
@@ -113,35 +113,35 @@ ul {
     padding: 25px 0 0 20px;
     position: absolute;
     width: 620px;
-  }
-  
-  #visual-area-top .text-box {
+}
+
+#visual-area-top .text-box {
     height: 100%;
     left: 640px;
     position: absolute;
     top: 0;
     width: 333px;
-  }
-  
-  #visual-area-top .subtitle {
+}
+
+#visual-area-top .subtitle {
     background: #262626;
     height: 53px;
     line-height: 53px;
-  }
-  
-  #visual-area-top .subtitle img {
+}
+
+#visual-area-top .subtitle img {
     margin: 0 30px;
     vertical-align: middle;
-  }
-  
-  #visual-area-top .thumb {
+}
+
+#visual-area-top .thumb {
     height: 435px;
     margin: 2px 0 0 -3px;
     overflow: hidden;
     width: 342px;
-  }
-  
-  #visual-area-top .thumb li a {
+}
+
+#visual-area-top .thumb li a {
     background: url(/common/img/visual_right_line.png) no-repeat 3px top;
     display: table-cell;
     height: 53px;
@@ -149,23 +149,23 @@ ul {
     padding: 0 25px 0 33px;
     vertical-align: middle;
     width: 278px;
-  }
-  
-  #visual-area-top .thumb li a img{
-    margin:1px 0 0 5px;
-  }
-  
-  #visual-area-top .thumb li.active a {
+}
+
+#visual-area-top .thumb li a img {
+    margin: 1px 0 0 5px;
+}
+
+#visual-area-top .thumb li.active a {
     background: url(/common/img/visual_right_frame02.png) no-repeat;
     color: #fff;
     width: 278px;
-  }
-  
-  #visual-area-top .thumb li a:hover {
+}
+
+#visual-area-top .thumb li a:hover {
     filter: alpha(opacity=80);
     -ms-filter: 'alpha(opacity=80)';
     opacity: .8;
-  }
+}
 
 .content-main-nav {
     float: left;
@@ -938,6 +938,87 @@ form {
     margin-top: 11%;
 }
 
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    /* 縦並びに変更 */
+    align-items: flex-start;
+    /* 左揃えに変更 */
+    padding: 20px;
+    background: #785f54;
+    color: #ffffff;
+    position: relative;
+    /* 追加: 相対位置を設定 */
+}
+
+.footer-logo img {
+    max-width: 400px;
+    margin-bottom: 20px;
+    /* SNSアイコンとの間に余白を追加 */
+}
+
+.footer-sns {
+    display: flex;
+    flex-direction: column;
+    /* 変更: 縦並びに変更 */
+    align-items: flex-start;
+    /* 左揃えに変更 */
+    gap: 10px;
+    /* アイコンとの間の余白 */
+    margin-left: 100px;
+}
+
+.footer-sns a img {
+    width: 30px;
+    height: 30px;
+    transition: opacity 0.3s;
+}
+
+.footer-sns a img:hover {
+    opacity: 0.7;
+}
+
+.footer-links {
+    position: absolute;
+    /* 追加: 絶対位置を設定 */
+    right: 20px;
+    /* 追加: ロゴの右側に配置 */
+    top: 30px;
+    /* 追加: 上からの位置を調整 */
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    /* 中央揃え */
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 12px;
+    color: #ffffff;
+}
+
 /* タブレット対応 */
 @media (max-width: 1020px) and (min-width: 768px) {}
 
@@ -1044,10 +1125,68 @@ form {
     .top-image {
         margin-top: 20%;
     }
+
+    .footer-logo img {
+        max-width: 200px;
+    }
+
+    .footer-sns {
+        margin: 0 auto;
+        padding-bottom: 10px;
+    }
+
+    .footer-links {
+        display: none;
+    }
 }
 
 .section-image {
     height: 70px;
     display: block;
     margin-bottom: 5px;
+}
+
+/* サイトマップスタイル */
+.sitemap {
+    background-color: #f3f3f3;
+    /* 背景色 */
+    padding: 20px;
+    /* 内側の余白 */
+    border-radius: 5px;
+    /* 角を丸くする */
+    margin-top: 20px;
+    /* 上の余白 */
+}
+
+.sitemap h2 {
+    font-size: 1.5em;
+    /* タイトルのフォントサイズ */
+    margin-bottom: 10px;
+    /* タイトルの下の余白 */
+}
+
+.sitemap ul {
+    list-style: none;
+    /* リストのスタイルをなしに */
+    padding: 0;
+    /* パディングをリセット */
+}
+
+.sitemap ul li {
+    margin: 5px 0;
+    /* 各リストアイテムの上下の余白 */
+}
+
+.sitemap ul li a {
+    text-decoration: none;
+    /* 下線をなしに */
+    color: #3171bd;
+    /* リンクの色 */
+    transition: color 0.3s;
+    /* ホバー時の色変更のトランジション */
+}
+
+.sitemap ul li a:hover {
+    color: #ff7f50;
+    /* ホバー時の色 */
 }

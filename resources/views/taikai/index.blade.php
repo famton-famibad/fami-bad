@@ -25,30 +25,37 @@ $taikai_month_kari = "00";
 <title>大会情報一覧 | Famton</title>
 @endsection
 
-@section('content-nav')
-<h2 class="title">カレンダー</h2>
-<ul class="list-nest">
-    <li>
-        <a class="trigger" onclick="toggleList(this)">大会</a>
-        <ul class="list-sub target" style="display: none;">
-            <li><a href="{{ route('taikai.index') }}">一覧</a></li>
-            <li><a href="{{ route('taikai.create') }}">登録</a></li>
-        </ul>
-    </li>
-    <li><a class="trigger" onclick="toggleList(this)">練習会</a>
-        <ul class="list-sub target" style="display: none;">
-            <!-- 練習会のリンクをここに追加 -->
-        </ul>
-    </li>
-</ul>
+@section('topic-path')
+<div class="topic-path">
+    <ul class="clearfix" style="display: flex;">
+        <li class="home"><a href="{{ url('/') }}">ホーム</a></li>
+        <li>大会情報</li>
+    </ul>
+</div>
 @endsection
 
-
-@section('topic-path')
-<ul class="clearfix" style="display: flex;">
-    <li class="home"><a href="{{ url('/') }}">ホーム</a></li>
-    <li>大会情報</li>
-</ul>
+@section('content-nav')
+<div class="content-main-nav">
+    <nav class="main-nav">
+        <div class="rnav">
+            <h2 class="title">カレンダー</h2>
+            <ul class="list-nest">
+                <li>
+                    <a class="trigger" onclick="toggleList(this)">大会</a>
+                    <ul class="list-sub target" style="display: none;">
+                        <li><a href="{{ route('taikai.index') }}">一覧</a></li>
+                        <li><a href="{{ route('taikai.create') }}">登録</a></li>
+                    </ul>
+                </li>
+                <li><a class="trigger" onclick="toggleList(this)">練習会</a>
+                    <ul class="list-sub target" style="display: none;">
+                        <!-- 練習会のリンクをここに追加 -->
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
 @endsection
 
 @section('content-main')

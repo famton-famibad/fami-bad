@@ -7,25 +7,31 @@
 @endsection
 
 @section('topic-path')
-<ul class="clearfix" style="display: flex;">
-    <li class="home"><a href="{{ url('/') }}">ホーム</a></li>
-    <li>チーム一覧</li>
-</ul>
+<div class="topic-path">
+    <ul class="clearfix" style="display: flex;">
+        <li class="home"><a href="{{ url('/') }}">ホーム</a></li>
+        <li>チーム一覧</li>
+    </ul>
+</div>
 @endsection
 
 
 @section('content-nav')
-<div>
-    <h2 class="title">チーム一覧</h2>
-    <ul class="list-nest">
-        <li>
-            <a class="trigger" onclick="toggleList(this)">チーム一覧</a>
-            <ul class="list-sub target" style="display: none;">
-                <li><a href="{{ route('team.index') }}">一覧</a></li>
-                <li><a href="{{ route('team.create') }}">登録</a></li>
+<div class="content-main-nav">
+    <nav class="main-nav">
+        <div class="rnav">
+            <h2 class="title">チーム一覧</h2>
+            <ul class="list-nest">
+                <li>
+                    <a class="trigger" onclick="toggleList(this)">チーム一覧</a>
+                    <ul class="list-sub target" style="display: none;">
+                        <li><a href="{{ route('team.index') }}">一覧</a></li>
+                        <li><a href="{{ route('team.create') }}">登録</a></li>
+                    </ul>
+                </li>
             </ul>
-        </li>
-    </ul>
+        </div>
+    </nav>
 </div>
 
 @endsection

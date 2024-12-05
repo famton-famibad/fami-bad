@@ -8,11 +8,13 @@
 @endsection
 
 @section('topic-path')
-<ul class="clearfix" style="display: flex;">
-    <li class="home"><a href="{{ route('taikai.index') }}">ホーム</a></li>
-    <li><a href="{{ route('taikai.index') }}">大会情報一覧</a></li>
-    <li>大会情報詳細</li>
-</ul>
+<div class="topic-path">
+    <ul class="clearfix" style="display: flex;">
+        <li class="home"><a href="{{ route('taikai.index') }}">ホーム</a></li>
+        <li><a href="{{ route('taikai.index') }}">大会情報一覧</a></li>
+        <li>大会情報詳細</li>
+    </ul>
+</div>
 @endsection
 
 @section('content-main')
@@ -88,8 +90,8 @@
 
     <div class="button-group">
         <a href="{{ route('taikai.edit', $taikai->id) }}" class="edit-button">編集</a>
-        <a href="{{ route('taikai.destroy', $taikai->id) }}" class="delete-button" 
-           onclick="event.preventDefault(); if(confirmDelete('{{ $taikai->taikai_name }}')) { document.getElementById('delete-form').submit(); }">
+        <a href="{{ route('taikai.destroy', $taikai->id) }}" class="delete-button"
+            onclick="event.preventDefault(); if(confirmDelete('{{ $taikai->taikai_name }}')) { document.getElementById('delete-form').submit(); }">
             削除
         </a>
         <form id="delete-form" action="{{ route('taikai.destroy', $taikai->id) }}" method="POST" style="display:none;">
