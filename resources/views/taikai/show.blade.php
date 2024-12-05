@@ -47,11 +47,7 @@
         <div class="detail-item">
             <h3>大会名:</h3>
             <p>{{ $taikai->taikai_name }}</p>
-        </div>        
-        <div class="detail-item">
-            <h3>大会名:</h3>
-            <p>{{ $taikai->taikai_name }}</p>
-        </div>        
+        </div>
         <div class="detail-item">
             <h3>要項等:</h3>
             <p>
