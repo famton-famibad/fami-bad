@@ -65,7 +65,7 @@
         </div>
         <div class="footer-sns">
             <p>↓ 最新情報はこちらをチェック ↓</p>
-            <a href="https://instagram.com" target="_blank">
+            <a href="https://www.instagram.com/famton_fami_bad?igsh=Z2RjaGRwc21kY2do&utm_source=qr" target="_blank">
                 <img src="{{asset('images/icon/instagram-icon.png')}}" alt="Instagram">
                 <span>Instagram</span>
             </a>

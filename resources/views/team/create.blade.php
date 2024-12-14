@@ -7,8 +7,27 @@
 <title>チーム情報登録 | Famton</title>
 @endsection
 
-@section('content-main')
 
+@section('content-nav')
+<div class="content-main-nav">
+    <nav class="main-nav">
+        <div class="rnav">
+            <h2 class="title">チーム一覧</h2>
+            <ul class="list-nest">
+                <li>
+                    <a class="trigger" onclick="toggleList(this)">チーム一覧</a>
+                    <ul class="list-sub target" style="display: none;">
+                        <li><a href="{{ route('team.index') }}">一覧</a></li>
+                        <li><a href="{{ route('team.create') }}">登録</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+@endsection
+
+@section('content-main')
 <form method="POST" action="{{ route('team.store') }}" enctype="multipart/form-data" class="formWrapper">
     <h2>チーム情報登録</h2>
     <hr>

@@ -7,6 +7,30 @@
 <title>大会情報更新 | Famton</title>
 @endsection
 
+@section('content-nav')
+<div class="content-main-nav">
+    <nav class="main-nav">
+        <div class="rnav">
+            <h2 class="title">大会情報</h2>
+            <ul class="list-nest">
+                <li>
+                    <a class="trigger" onclick="toggleList(this)">大会</a>
+                    <ul class="list-sub target" style="display: none;">
+                        <li><a href="{{ route('taikai.index') }}">一覧</a></li>
+                        <li><a href="{{ route('taikai.create') }}">登録</a></li>
+                    </ul>
+                </li>
+                <li><a class="trigger" onclick="toggleList(this)">練習会</a>
+                    <ul class="list-sub target" style="display: none;">
+                        <!-- 練習会のリンクをここに追加 -->
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+@endsection
+
 @section('content-main')
 
 <form method="POST" action="{{ route('taikai.update', $taikai->id) }}" class="formWrapper" enctype="multipart/form-data">
