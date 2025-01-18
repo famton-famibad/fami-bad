@@ -63,6 +63,11 @@
                                                 </a>
                                             </li>
                                             <li>
+                                                <a href="{{route('taikai.past')}}" class="accordion__link">
+                                                    過去の大会一覧
+                                                </a>
+                                            </li>
+                                            <li>
                                                 <a href="{{route('taikai.create')}}" class="accordion__link">
                                                     大会登録
                                                 </a>

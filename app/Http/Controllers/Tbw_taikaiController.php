@@ -12,7 +12,15 @@ class Tbw_taikaiController extends Controller
      */
     public function index()
     {
-        $taikais = Tbw_taikai::where('del_flg', 0)->orderBy('kaisai_date', 'asc')->paginate(30);
+        // 現在の日付から1ヶ月前の日付を取得
+        $oneMonthAgo = now()->subMonth();
+        
+        // 現在日から1ヶ月前以降の大会を取得
+        $taikais = Tbw_taikai::where('del_flg', 0)
+            ->where('kaisai_date', '>=', $oneMonthAgo)
+            ->orderBy('kaisai_date', 'asc')
+            ->paginate(30);
+
         return view('taikai.index', compact('taikais'));
     }
 
@@ -166,5 +174,21 @@ class Tbw_taikaiController extends Controller
             session()->flash('flash_error_message_delete', '大会情報が見つかりませんでした。');
         }
         return redirect()->route('taikai.index');
+    }
+
+    /**
+     * Show the form for displaying past events.
+     */
+    public function past()
+    {
+        // 現在の日付から1ヶ月前より前の大会を取得
+        $oneMonthAgo = now()->subMonth();
+        
+        $pastTaikais = Tbw_taikai::where('del_flg', 0)
+            ->where('kaisai_date', '<', $oneMonthAgo)
+            ->orderBy('kaisai_date', 'desc')
+            ->paginate(30);
+
+        return view('taikai.past', compact('pastTaikais'));
     }
 }

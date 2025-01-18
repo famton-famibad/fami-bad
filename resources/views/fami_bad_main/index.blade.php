@@ -59,7 +59,7 @@
 <footer>
     <div class="footer-container">
         <div class="footer-logo">
-            <a href="/">
+            <a href="{{ url('/') }}">
                 <img src="{{asset('images/footer/logo.png')}}" alt="Famton Logo">
             </a>
         </div>
@@ -75,10 +75,10 @@
                 <li>お問い合わせ</a></li>
             </ul>
             <ul>
-                <li>Famton オンラインショップ</a></li>
+                <li><a href="https://famton-shop.com" target="_blank">Famton オンラインショップ</a></li>
             </ul>
         </div>
-        <p>&copy; 2024 Famton. All Rights Reserved.</p>
+        <p>&copy; 2025 Famton. All Rights Reserved.</p>
     </div>
 </footer>
 @endsection
